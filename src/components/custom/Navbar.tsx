@@ -10,10 +10,16 @@ const Navbar: FC = () => {
       <NavigationMenuList>
         {navItem?.map((item) => (
           <NavigationMenuItem>
-          <NavigationMenuLink>
-            <Link to={item.path}>{item.label}</Link>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
+            <NavigationMenuLink>
+              <Link
+                className="flex items-center justify-center gap-2"
+                to={item.path}
+              >
+                {item.icon}
+                {item.label}
+              </Link>
+            </NavigationMenuLink>
+          </NavigationMenuItem>
         ))}
       </NavigationMenuList>
     </NavigationMenu>

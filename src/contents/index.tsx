@@ -1,33 +1,31 @@
 import { CryptoCurrencies, CryptoDetails, Exchanges, Home, News } from "@/pages";
 import type { navigationMenuItem as type} from "@/types";
+import { CircleDollarSign, HandCoins, HomeIcon, Newspaper } from "lucide-react";
 
 
 export const navigationMenuItem: type[] = [
     {
         label: 'Home',
         path: '/',
-        element: <Home />
+        element: <Home />,
+        icon: <HomeIcon />
     },
     {
         label: 'Exchanges',
         path: '/exchanges',
-        element: <Exchanges />
-
+        element: <Exchanges />,
+        icon: <HandCoins />
     },
     {
         label: 'CryptoCurrencies',
         path: '/cryptoCurrencies',
-        element: <CryptoCurrencies />
-
-    },
-    {
-        label: 'CryptoDetails',
-        path: '/crypto/:coinId',
-        element: <CryptoDetails />
+        element: <CryptoCurrencies />,
+        icon: <CircleDollarSign />
     },
     {
         label: 'News',
         path: '/news',
-        element: <News />
+        element: <News />,
+        icon: <Newspaper />,
     }
 ]

@@ -4,4 +4,5 @@ export interface navigationMenuItem {
     label: string;
     path: string;
     element: ReactNode;
+    icon: ReactNode;
 }
