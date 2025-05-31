@@ -1,28 +1,39 @@
 import type { FC } from "react"
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "../ui"
+import {
+  Button,
+  Sidebar,
+  SidebarContent,
+  SidebarMenu,
+  SidebarMenuItem
+} from "../ui"
 import { Link } from "react-router-dom"
 import { navigationMenuItem as navItem } from "@/contents"
 
-
 const Navbar: FC = () => {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        {navItem?.map((item) => (
-          <NavigationMenuItem>
-            <NavigationMenuLink>
-              <Link
-                className="flex items-center justify-center gap-2"
-                to={item.path}
-              >
-                {item.icon}
-                {item.label}
-              </Link>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-        ))}
-      </NavigationMenuList>
-    </NavigationMenu>
+    <Sidebar >
+      <SidebarContent className="bg-deepblue">
+        <SidebarMenu className="p-2 pt-20">
+          {navItem?.map((item) => (
+            <SidebarMenuItem key={item.label} >
+              {/* <SidebarMenuButton asChild isActive className="bg-transparent" variant={'outline'}> */}
+              <Button variant="ghost" asChild className="w-full flex justify-start text-white">
+                <Link
+                  className=""
+                  to={item.path}
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                </Link>
+              </Button>
+              {/* </SidebarMenuButton> */}
+
+            </SidebarMenuItem>
+          ))}
+
+        </SidebarMenu>
+      </SidebarContent>
+    </Sidebar>
   )
 }
 

@@ -1,4 +1,4 @@
-import { CryptoCurrencies, CryptoDetails, Exchanges, Home, News } from "@/pages";
+import { CryptoCurrencies, Exchanges, Home, News } from "@/pages";
 import type { navigationMenuItem as type} from "@/types";
 import { CircleDollarSign, HandCoins, HomeIcon, Newspaper } from "lucide-react";
 

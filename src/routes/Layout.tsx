@@ -1,18 +1,23 @@
-import { Navbar } from "@/components/custom"
+import { Header, Navbar } from "@/components/custom"
+import { SidebarProvider } from "@/components/ui"
 import type { FC } from "react"
 import { Outlet } from "react-router-dom"
 
 const Layout: FC = () => {
     return (
-        <div>
-            <header>
+        <div className="">
+            <SidebarProvider className="">
                 <Navbar />
-            </header>
-            <main>
-                <Outlet />
-            </main>
-            <footer>© 2025 My Company</footer>
+                <div className="w-full">
+                    <Header />
+                    <main className="">
+                        <Outlet />
+                    </main>
+                    <footer className="py-20 w-full bg-deepblue text-center text-lightblue">© 2025 My Company</footer>
+                </div>
+            </SidebarProvider>
         </div>
+
     )
 }
 
