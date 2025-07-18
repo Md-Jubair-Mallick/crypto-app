@@ -3,7 +3,7 @@ import { Card, Col, Row, Statistic, Typography } from "antd";
 import { useGetCoins, useGetExchange } from '@/state/queries';
 import millify from 'millify'
 import { ErrorAlert, SkeletonCard } from '@/components/custom';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui';
 import { navigationMenuItem } from '@/contents';
 import { CryptoCurrencies as Crypto } from '@/components/custom'
@@ -11,7 +11,6 @@ import { CryptoCurrencies as Crypto } from '@/components/custom'
 const { Title } = Typography
 
 const Home = () => {
-  // const { id } = useParams()
   const cryptoLink = navigationMenuItem?.find(item => item?.label === 'Cryptocurrencies')
 
   const { data, isLoading, isError, error } = useGetCoins({ limit: '10' })
@@ -23,8 +22,8 @@ const Home = () => {
 
   console.log(stats, coins)
   if (isLoading && exIsLoading) return <SkeletonCard />
-  if (isError) return <ErrorAlert error={error?.message} />
-  if (exIsError) return <ErrorAlert error={exError?.message} />
+  if (isError) return <ErrorAlert error={error?.message || ''} />
+  if (exIsError) return <ErrorAlert error={exError?.message || ''} />
   return (
     <div className='py-6'>
       <div className="my-6">

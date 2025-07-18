@@ -1,6 +1,6 @@
 import { coinsDetails } from "@/api/coinsDetailsApi";
-import { coins } from "@/api/cryptoApi";
 import { exchanges } from "@/api/exchangeApi";
+import { coins } from "@/api/cryptoApi";
 import { news } from "@/api/newsApi";
 import type { FilterParams } from "@/types";
 import { useQuery } from "@tanstack/react-query";

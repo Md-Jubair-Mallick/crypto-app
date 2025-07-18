@@ -2,7 +2,10 @@ import { AlertCircle } from "lucide-react"
 import { Alert, AlertDescription, AlertTitle } from "../ui"
 import type { FC } from "react"
 
-const ErrorAlert: FC = ({error}) => {
+type ErrorAlertProps = {
+  error: string
+}
+const ErrorAlert: FC<ErrorAlertProps> = ({error}) => {
   return (
     <Alert variant="destructive" className="mt-2 absolute top-20 w-auto">
       <AlertCircle className="h-4 w-4" />

@@ -8,6 +8,10 @@ const CryptoCurrencies: FC = () => {
   const coins = data?.coins
 
   return (
+    isLoading ? <div>Loading...</div> :
+    isError ? <div>Error: {error?.message}</div> :
+    !coins || coins.length === 0 ? <div>No coins available</div> :
+    coins && coins.length > 0 &&
     <Crypto coins={coins}/>
   )
 }

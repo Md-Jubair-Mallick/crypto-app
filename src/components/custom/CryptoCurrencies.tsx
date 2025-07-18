@@ -4,7 +4,21 @@ import millify from "millify"
 import { Link } from "react-router-dom"
 
 const { Title } = Typography
-const CryptoCurrencies: FC = ({ coins, children }) => {
+type coinsType = {
+    uuid: string;
+    name: string;
+    symbol: string;
+    iconUrl: string;
+    rank: number;
+    price: number;
+    marketCap: number;
+    change: number;
+}
+type CryptoCurrenciesProps = {
+    coins: coinsType[];
+    children?: React.ReactNode;
+}
+const CryptoCurrencies: FC<CryptoCurrenciesProps> = ({ coins, children }) => {
     return (
         <div className="my-6">
             <Title level={2} className='heading py-5'>Top Cryptocurrencies in the world</Title>
