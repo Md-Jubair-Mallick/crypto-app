@@ -14,7 +14,7 @@ const Navbar: FC = () => {
     <Sidebar >
       <SidebarContent className="bg-deepblue">
         <SidebarMenu className="p-2 pt-20">
-          {navItem?.map((item) => (
+          {navItem?.filter(item=> item?.label !== 'CryptoDetails').map((item) => (
             <SidebarMenuItem key={item.label} >
               {/* <SidebarMenuButton asChild isActive className="bg-transparent" variant={'outline'}> */}
               <Button variant="ghost" asChild className="w-full flex justify-start text-white">

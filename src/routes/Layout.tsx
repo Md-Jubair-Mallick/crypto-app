@@ -10,7 +10,7 @@ const Layout: FC = () => {
                 <Navbar />
                 <div className="w-full">
                     <Header />
-                    <main className="">
+                    <main className="px-16">
                         <Outlet />
                     </main>
                     <footer className="py-20 w-full bg-deepblue text-center text-lightblue">© 2025 My Company</footer>

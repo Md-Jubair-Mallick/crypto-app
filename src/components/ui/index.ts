@@ -57,3 +57,5 @@ export { Skeleton } from "./skeleton";
 export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from "./tooltip";
 
 export { Avatar, AvatarFallback, AvatarImage } from "./avatar"
+
+export { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
