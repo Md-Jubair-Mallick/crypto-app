@@ -13,8 +13,6 @@ dist-ssr
 .env
 *.local
 
-# remove
-api*
 
 # Editor directories and files
 .vscode/*
