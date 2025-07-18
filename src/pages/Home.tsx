@@ -9,7 +9,17 @@ import { navigationMenuItem } from '@/contents';
 import { CryptoCurrencies as Crypto } from '@/components/custom'
 
 const { Title } = Typography
-
+type exchangeType = {
+  name: string;
+  image: string;
+  country: string;
+  year_established: number;
+  trust_score_rank: number;
+  trust_score: number;
+  trade_volume_24h_btc: number;
+  has_trading_incentive: boolean;
+  url: string;
+}
 const Home = () => {
   const cryptoLink = navigationMenuItem?.find(item => item?.label === 'Cryptocurrencies')
 
@@ -50,9 +60,9 @@ const Home = () => {
 
       <Crypto coins={coins} >
         <Button className='my-6 mx-auto' variant={'outline'}>
-          <Link to={cryptoLink?.path}>
-            See More
-          </Link>
+          {cryptoLink?.path && (
+            <Link to={cryptoLink.path}>See More</Link>
+          )}
         </Button>
       </Crypto>
 
@@ -60,7 +70,7 @@ const Home = () => {
         <Title level={2} className='heading'>Top 10 Exchanges in the world</Title>
 
         <Row gutter={[32, 32]}>
-          {exchanges?.map((item, index) => (
+          {exchanges?.map((item: exchangeType, index: number) => (
             <Col xs={24} sm={12} lg={6} key={index}>
               <Link to={`${item?.url}`}>
                 <Card
@@ -81,9 +91,10 @@ const Home = () => {
           ))}
           <Col span={12}>
             <Button className='my-6 mx-auto' variant={'outline'}>
-              <Link to={cryptoLink?.path}>
-                See More
-              </Link>
+              {cryptoLink?.path && (
+                <Link to={cryptoLink.path}>See More</Link>
+              )}
+
             </Button>
           </Col>
         </Row>
